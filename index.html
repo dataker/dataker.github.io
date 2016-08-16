@@ -13,20 +13,31 @@
     body {
     background-color:#2A242D;
 }
-
-    #terminal {
-      font-family: fantasy;
-      line-height: 32px;
-      padding: 5px;
-      font-size:32px;
-    }
-
     #usage {
       font-family: Consolas, Menlo, Monaco, monospace;
       background-color: #2A242D;
       color: #FDFBFB;
-      font-size: 25px;
+      font-size: 35px;
+      line-height: 40px
     }
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+	  #usage {
+      font-size:50px;
+      line-height:40px
+    }
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+#usage {
+      font-size:60px;
+      line-height:50px
+    }
+ } }
   </style>
 </head>
 <body>
@@ -47,17 +58,13 @@
 }
 
 </style>
-<div class="row">	
-	<div class="col-xs-12">	
-		<div class ="demo">
-		  <div id="terminal"></div>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-12">    
-		<div class="demo">
-		  <div id="usage"></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">    
+			<div class="demo">
+			  <div id="terminal"></div>	
+			  <div id="usage"></div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -70,7 +77,8 @@
       dom: 'usage',
       speed: 15,
       cursor: {
-        width: 2
+        width: 10,
+	height: 40
       }
     }).run(function (o) {
       o.output('athena,').wait(2500);
